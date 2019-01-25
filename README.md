@@ -6,6 +6,6 @@ To run this app, please follow the next steps:
   4. Open a Postman.
   5. Run this urls: 
   
-    5.1 http://localhost:8080/log?statusCode=200
+    5.1 http://localhost:8080/auvick/log?statusCode=200
     
-    5.2 http://localhost:8080/request?hostName=tanuki.twics.com
+    5.2 http://localhost:8080/auvick/request?hostName=tanuki.twics.com
