@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.auvick.log.dto.LogDto;
 import com.auvick.log.service.ILogService;
 
-
+@RequestMapping("/auvick")
 @RestController
 public class LogController {
 
