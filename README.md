@@ -2,7 +2,7 @@
 To run this springboot app, please follow the next steps:
   1. Clone the repository.
   2. mvn install or in eclipse Run -> mvn install
-  3. In a command-line write java -jar log-0.0.1-SNAPSHOT.jar (inside the target folder)
+  3. In a command-line write java -jar <your_path>/log-0.0.1-SNAPSHOT.jar
   4. Open a Postman.
   5. Run this urls: 
   
