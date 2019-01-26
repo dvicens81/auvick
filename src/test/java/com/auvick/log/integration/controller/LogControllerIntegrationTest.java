@@ -29,14 +29,20 @@ public class LogControllerIntegrationTest {
 	
 	@Test
 	public void getLogByStatusCode() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/log?statusCode=200"))	
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/auvick/log?statusCode=200"))	
 						.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test
 	public void getLogByHostName() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/request?hostName=wpbfl2-45.gate.net"))	
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/auvick/request?hostName=wpbfl2-45.gate.net"))	
 						.andExpect(MockMvcResultMatchers.status().isOk());
+	}
+	
+	@Test
+	public void getLogWithoutStatusCode() throws Exception {
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/auvick/log"))	
+						.andExpect(MockMvcResultMatchers.status().isBadRequest());
 	}
 
 }

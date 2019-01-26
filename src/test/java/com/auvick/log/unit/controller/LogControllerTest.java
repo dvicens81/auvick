@@ -26,7 +26,7 @@ public class LogControllerTest {
 	private Page<LogDto> page;
 	private List<String> lRequest;
 	
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@BeforeEach
 	public void setUp() {
 		logService = Mockito.mock(ILogService.class);
