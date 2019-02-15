@@ -28,7 +28,7 @@ public class LogServiceImpl implements ILogService {
 	@Override
 	public List<LogDto> getLogsByStatusCode(int statusCode) {
 		List<Log> lLogs = logRepository.getLogsByStatusCode(statusCode);
-		if (lLogs == null || lLogs.isEmpty()) return new ArrayList<LogDto>();
+		if (lLogs == null || lLogs.isEmpty()) return new ArrayList<>();
 		return mapper.convertEntityToDto(lLogs);
 	}
 

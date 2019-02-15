@@ -28,13 +28,13 @@ public class LogController {
 	@GetMapping(value="/log")
     public ResponseEntity<List<LogDto>> getLogsByStatusCode(@RequestParam("statusCode") int statusCode) {
 		List<LogDto> lLogsDto = logService.getLogsByStatusCode(statusCode);
-		return new ResponseEntity<List<LogDto>>(lLogsDto, HttpStatus.OK);
+		return new ResponseEntity<>(lLogsDto, HttpStatus.OK);
     }
 	
 	@GetMapping("/request")
 	public ResponseEntity<Page<LogDto>> getRequestByHostName(@RequestParam("hostName") String hostName) {
 		Page<LogDto> lLogsDto = logService.getLogsByHostName(hostName);
-		return new ResponseEntity<Page<LogDto>>(lLogsDto, HttpStatus.OK);
+		return new ResponseEntity<>(lLogsDto, HttpStatus.OK);
     }
 	
 }

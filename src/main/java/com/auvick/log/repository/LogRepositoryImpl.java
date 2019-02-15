@@ -2,6 +2,7 @@ package com.auvick.log.repository;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ import com.auvick.log.filter.IFilter;
 @Component
 public class LogRepositoryImpl implements IlogRepository {
 	private static final String LOG_FILE = "/access.log";
-	private static List<String> accessLogFile = new LinkedList<String>();
+	private static List<String> accessLogFile = new LinkedList<>();
 	
 	@Autowired
 	private IConverter<Log> converter;
@@ -25,7 +26,7 @@ public class LogRepositoryImpl implements IlogRepository {
 
     static {
         try (InputStream input = LogRepositoryImpl.class.getResourceAsStream(LOG_FILE)) {        	
-            accessLogFile = IOUtils.readLines(input, "UTF-8");
+            accessLogFile = IOUtils.readLines(input, StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -18,7 +18,7 @@ class ConverterImpl<T> implements IConverter<T> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> convertLogFileInEntityLog(List<String> lAccessLog) {
-		List<T> lLogs = new LinkedList<T>();
+		List<T> lLogs = new LinkedList<>();
 		Log log = null;
 		for (String lineLog : lAccessLog) {
 			Matcher matcher = getMatchByPattern(REGEX, lineLog);
@@ -41,9 +41,7 @@ class ConverterImpl<T> implements IConverter<T> {
 		//REGEX RESPONSE = (\\d{3})
 		//REGEX BYTES = (\\d+)
 		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(lineLog);
-
-		return matcher;
+		return pattern.matcher(lineLog);
 	}
 
 }
